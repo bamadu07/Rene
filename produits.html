@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - Librairie Sportive</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header simplifié -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-section">
+                <h1 class="logo">
+                    <i class="fas fa-book-open"></i>
+                    Librairie Sportive
+                </h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">
+                        <span>Accueil</span>
+                    </a></li>
+                    <li><a href="produits.html" class="nav-link active">
+                        <span>Produits</span>
+                    </a></li>
+                    <li><a href="a-propos.html" class="nav-link">
+                        <span>À Propos</span>
+                    </a></li>
+                    <li><a href="contact.html" class="nav-link">
+                        <span>Contact</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn" onclick="openSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bouton WhatsApp Flottant -->
+    <a href="https://wa.me/221763607508" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    
+
+    <!-- Panier flottant -->
+    <div class="cart-float" id="cartFloat">
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <div class="cart-dropdown" id="cartDropdown">
+            <div class="cart-header">
+                <h3>Votre Panier</h3>
+                <button class="close-cart" onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Les articles du panier apparaîtront ici -->
+            </div>
+            <div class="cart-total">
+                Total: <span id="cartTotal">0</span> FCFA
+            </div>
+            <button class="btn btn-whatsapp" onclick="confirmOrder()">
+                <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Nos Produits</h1>
+                <p class="hero-subtitle">Découvrez notre sélection exclusive de maillots et romans</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-page">
+        <div class="container">
+            
+            <!-- Section Maillots -->
+            <section id="maillots" class="product-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tshirt"></i> Maillots Personnalisés</h2>
+                    <p>Créez votre maillot unique avec votre nom et numéro</p>
+                </div>
+                <div class="products-grid">
+                    <!-- Maillot Football -->
+                    <div class="product-card">
+                        <div class="product-badge">Populaire</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Maillot de football">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('football')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Maillot Football Élite</h3>
+                            <p class="description">Maillot technique avec respirabilité optimale et coupe athlétique</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Respirant</span>
+                                <span><i class="fas fa-check"></i> Lavage facile</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">8.000 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Maillot Football Élite', 8000, 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Maillot Basketball -->
+                    <div class="product-card">
+                        <div class="product-badge">Nouveau</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Maillot de basketball">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('basketball')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Maillot Basketball Pro</h3>
+                            <p class="description">Coupe ample pour une liberté de mouvement totale</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Confortable</span>
+                                <span><i class="fas fa-check"></i> Séchage rapide</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">7.000 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Maillot Basketball Pro', 7000, 'https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ensemble Sport -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Ensemble maillot">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('ensemble')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Ensemble Sport Complet</h3>
+                            <p class="description">Tissu renforcé pour les sports de contact - Maillot + Short</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Renforcé</span>
+                                <span><i class="fas fa-check"></i> Ensemble complet</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">15.000 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Ensemble Sport Complet', 15000, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Romans -->
+            <section id="romans" class="product-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book-open"></i> Romans Sportifs</h2>
+                    <p>Plongez dans des histoires passionnantes inspirées du monde du sport</p>
+                </div>
+                <div class="products-grid">
+                    <!-- Roman 1 -->
+                    <div class="product-card">
+                        <div class="product-badge">Best-seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Le Dernier Sprint">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('roman1')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Le Dernier Sprint</h3>
+                            <p class="author">Par Jean Martin</p>
+                            <p class="description">L'histoire inspirante d'un coureur déterminé à vaincre ses démons</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(48)</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">12.500 FCFA</p>
+                                <button class="btn btn-secondary" onclick="addToCart('Le Dernier Sprint - Roman', 12500, 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Roman 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Terrain de Rêves">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('roman2')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Terrain de Rêves</h3>
+                            <p class="author">Par Marie Lambert</p>
+                            <p class="description">Un jeune footballeur se bat pour réaliser son rêve professionnel</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(63)</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">14.100 FCFA</p>
+                                <button class="btn btn-secondary" onclick="addToCart('Terrain de Rêves - Roman', 14100, 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Roman 3 -->
+                    <div class="product-card">
+                        <div class="product-badge">Nouveau</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="L'Équipe du Coeur">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('roman3')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>L'Équipe du Coeur</h3>
+                            <p class="author">Par Pierre Dubois</p>
+                            <p class="description">Une équipe de rugby soudée affronte l'adversité ensemble</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(35)</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">13.100 FCFA</p>
+                                <button class="btn btn-secondary" onclick="addToCart('L\'Équipe du Coeur - Roman', 13100, 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Modal Détails Produit -->
+    <div id="productModal" class="modal">
+        <div class="modal-content product-modal">
+            <span class="close" onclick="closeModal('productModal')">&times;</span>
+            <div class="product-modal-content" id="productModalContent">
+                <!-- Le contenu sera généré dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Librairie Sportive</h3>
+                    <p>Votre partenaire pour le sport et la lecture depuis 2010</p>
+                    <div class="footer-contact">
+                        <a href="tel:+221763607508">
+                            <i class="fas fa-phone"></i>
+                            +221 76 360 75 08
+                        </a>
+                        <a href="mailto:contact@librairie-sportive.fr">
+                            <i class="fas fa-envelope"></i>
+                            contact@librairie-sportive.fr
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><strong>Rene Ndiaye</strong></p>
+                        <p>Gérant & Fondateur</p>
+                        <div class="contact-links">
+                            <a href="tel:+221763607508">
+                                <i class="fas fa-phone"></i>
+                                +221 76 360 75 08
+                            </a>
+                            <a href="mailto:rene@librairie-sportive.fr">
+                                <i class="fas fa-envelope"></i>
+                                rene@librairie-sportive.fr
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Librairie Sportive. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== VARIABLES GLOBALES =====
+        let cart = [];
+        let cartVisible = false;
+
+        // ===== DONNÉES DES PRODUITS =====
+        const productDetails = {
+            football: {
+                title: "Maillot Football Élite",
+                price: "8.000 FCFA",
+                image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Maillot technique haute performance conçu pour les athlètes exigeants. Fabriqué avec des matériaux respirants qui évacuent l'humidité pour un confort optimal pendant l'effort.",
+                features: [
+                    "Tissu technique respirant",
+                    "Coupe athlétique ergonomique",
+                    "Lavage facile et séchage rapide",
+                    "Respectueux de la peau"
+                ],
+                sizes: ["S", "M", "L", "XL", "XXL"]
+            },
+            basketball: {
+                title: "Maillot Basketball Pro",
+                price: "7.000 FCFA",
+                image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Maillot de basketball professionnel offrant une liberté de mouvement totale. Idéal pour les matchs et les entraînements intensifs.",
+                features: [
+                    "Coupe ample pour plus de liberté",
+                    "Séchage ultra-rapide",
+                    "Confort optimal",
+                    "Durabilité exceptionnelle"
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            ensemble: {
+                title: "Ensemble Sport Complet",
+                price: "15.000 FCFA",
+                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Ensemble complet maillot + short conçu pour les sports de contact. Tissu renforcé pour une résistance accrue.",
+                features: [
+                    "Tissu renforcé anti-déchirure",
+                    "Ensemble coordonné",
+                    "Confort maximal",
+                    "Idéal pour le rugby et sports de contact"
+                ],
+                sizes: ["S", "M", "L", "XL", "XXL"]
+            },
+            roman1: {
+                title: "Le Dernier Sprint",
+                price: "12.500 FCFA",
+                image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Une histoire poignante qui suit le parcours d'un coureur déterminé à surmonter ses démons intérieurs et à repousser ses limites.",
+                features: [
+                    "Roman inspirant",
+                    "320 pages",
+                    "Couverture rigide",
+                    "Édition limitée"
+                ],
+                author: "Jean Martin",
+                pages: "320",
+                genre: "Roman sportif"
+            },
+            roman2: {
+                title: "Terrain de Rêves",
+                price: "14.100 FCFA",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "L'histoire captivante d'un jeune footballeur talentueux qui se bat pour réaliser son rêve de devenir joueur professionnel.",
+                features: [
+                    "Best-seller",
+                    "280 pages",
+                    "Illustrations exclusives",
+                    "Postface de l'auteur"
+                ],
+                author: "Marie Lambert",
+                pages: "280",
+                genre: "Roman football"
+            },
+            roman3: {
+                title: "L'Équipe du Coeur",
+                price: "13.100 FCFA",
+                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Un rétouchant récit sur une équipe de rugby qui apprend à surmonter l'adversité grâce à la solidarité et l'amitié.",
+                features: [
+                    "Nouvelle édition",
+                    "350 pages",
+                    "Couverture souple",
+                    "Bonus : interview de l'auteur"
+                ],
+                author: "Pierre Dubois",
+                pages: "350",
+                genre: "Roman rugby"
+            }
+        };
+
+        // ===== FONCTIONS DU PANIER =====
+        function addToCart(productName, price, image) {
+            const product = {
+                id: Date.now(),
+                name: productName,
+                price: price,
+                image: image,
+                quantity: 1
+            };
+            
+            cart.push(product);
+            updateCart();
+            showNotification(`${productName} ajouté au panier !`);
+        }
+
+        function updateCart() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+            
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <h4>${item.name}</h4>
+                        <p>${item.price.toLocaleString()} FCFA</p>
+                    </div>
+                    <button class="remove-item" onclick="removeFromCart(${item.id})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = total.toLocaleString();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        function toggleCart() {
+            const cartDropdown = document.getElementById('cartDropdown');
+            cartVisible = !cartVisible;
+            cartDropdown.style.display = cartVisible ? 'block' : 'none';
+        }
+
+        function confirmOrder() {
+            if (cart.length === 0) {
+                showNotification('Votre panier est vide !');
+                return;
+            }
+
+            let message = "Bonjour Librairie Sportive !%0A%0AJe souhaite commander les articles suivants :%0A%0A";
+            
+            cart.forEach((item, index) => {
+                message += `• ${item.name} - ${item.price.toLocaleString()} FCFA%0A`;
+            });
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            message += `%0ATotal : ${total.toLocaleString()} FCFA%0A%0A`;
+            message += "Merci de me recontacter pour finaliser la commande.%0A%C3%80 bientôt !";
+            
+            const phoneNumber = "221763607508";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            cart = [];
+            updateCart();
+            toggleCart();
+            
+            showNotification('Commande envoyée sur WhatsApp !');
+        }
+
+        // ===== FONCTIONS MODAL =====
+        function showProductDetails(productId) {
+            const product = productDetails[productId];
+            if (!product) return;
+
+            const modalContent = document.getElementById('productModalContent');
+            const isClothing = productId === 'football' || productId === 'basketball' || productId === 'ensemble';
+            
+            modalContent.innerHTML = `
+                <div class="product-modal-main">
+                    <div class="product-modal-image">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="product-modal-info">
+                        <h3>${product.title}</h3>
+                        ${product.author ? `<p class="product-author">Par ${product.author}</p>` : ''}
+                        <p class="product-modal-description">${product.description}</p>
+                        
+                        <div class="product-features-modal">
+                            <h4>Caractéristiques :</h4>
+                            <ul>
+                                ${product.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        ${isClothing ? `
+                            <div class="size-selector">
+                                <h4>Taille :</h4>
+                                <div class="size-options">
+                                    ${product.sizes.map(size => `
+                                        <label class="size-option">
+                                            <input type="radio" name="size" value="${size}">
+                                            <span>${size}</span>
+                                        </label>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : `
+                            <div class="book-details">
+                                <div class="detail-item">
+                                    <strong>Genre :</strong> ${product.genre}
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Pages :</strong> ${product.pages}
+                                </div>
+                            </div>
+                        `}
+
+                        <div class="product-modal-price">
+                            <span class="price">${product.price}</span>
+                        </div>
+                        
+                        <button class="btn btn-primary" onclick="addToCart('${product.title}', ${parseInt(product.price.replace(/[^\d]/g, ''))}, '${product.image}'); closeModal('productModal')">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('productModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // ===== NOTIFICATIONS =====
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // ===== ANIMATIONS =====
+        function checkScroll() {
+            const elements = document.querySelectorAll('.product-card, .section-header');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // ===== ÉVÉNEMENTS =====
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let modal of modals) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            }
+            
+            const cartFloat = document.getElementById('cartFloat');
+            if (!cartFloat.contains(event.target)) {
+                document.getElementById('cartDropdown').style.display = 'none';
+                cartVisible = false;
+            }
+        }
+
+        // ===== INITIALISATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCart();
+            document.getElementById('cartDropdown').style.display = 'none';
+            
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+            
+            setTimeout(() => {
+                document.querySelector('.products-hero').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+
+    <style>
+        /* ===== VARIABLES CSS ===== */
+        :root {
+            --primary-color: #667eea;
+            --primary-dark: #5a6fd8;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== STYLES DE BASE ===== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HEADER ===== */
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+            color: var(--primary-color);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-btn, .cart-btn {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .search-btn:hover, .cart-btn:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+            color: var(--primary-color);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-color);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .products-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0 V100 Q500,50 1000,100 V0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
+        }
+
+        .products-hero.loaded .hero-title {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .products-hero.loaded .hero-subtitle {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.8s ease 0.2s, opacity 0.8s ease 0.2s;
+        }
+
+        /* ===== SECTIONS PRODUITS ===== */
+        .products-page {
+            padding: 80px 0;
+        }
+
+        .product-section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .section-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .section-header h2 i {
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== GRILLE DE PRODUITS ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .quick-view {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quick-view:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .author {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-features span {
+            background: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .product-features i {
+            color: #28a745;
+            font-size: 0.7rem;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .rating i {
+            color: #ffc107;
+        }
+
+        .rating span {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* ===== PANIER FLOTTANT ===== */
+        .cart-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .cart-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-dropdown {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            max-height: 500px;
+            display: none;
+            overflow: hidden;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            margin: 0;
+            color: var(--dark-color);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .close-cart:hover {
+            color: var(--primary-color);
+        }
+
+        .cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cart-item-details h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        .cart-item-details p {
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            margin-left: auto;
+            transition: var(--transition);
+        }
+
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-total {
+            padding: 20px;
+            border-top: 1px solid #e9ecef;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--dark-color);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            width: 100%;
+            justify-content: center;
+            border-radius: 0;
+            padding: 15px;
+            font-size: 1rem;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: none;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* ===== MODAL PRODUIT ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .product-modal {
+            background-color: white;
+            margin: 5% auto;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .close:hover {
+            color: var(--primary-color);
+        }
+
+        .product-modal-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .product-modal-image {
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .product-modal-image img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-modal-info {
+            padding: 40px;
+            background: white;
+        }
+
+        .product-modal-info h3 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .product-author {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .product-modal-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .product-features-modal h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .product-features-modal ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .product-features-modal li {
+            padding: 8px 0;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-features-modal li i {
+            color: #28a745;
+        }
+
+        .size-selector h4,
+        .book-details h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            position: relative;
+        }
+
+        .size-option input {
+            display: none;
+        }
+
+        .size-option span {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .size-option input:checked + span {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .book-details {
+            margin-bottom: 25px;
+        }
+
+        .detail-item {
+            padding: 8px 0;
+            color: var(--text-light);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-modal-price {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .product-modal-price .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* ===== NOTIFICATIONS ===== */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 3000;
+            font-weight: 500;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3, .footer-section h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-contact, .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-contact a, .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .main-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-modal-main {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-modal-image {
+                padding: 30px 20px;
+            }
+            
+            .product-modal-info {
+                padding: 30px 20px;
+            }
+            
+            .cart-dropdown {
+                width: 300px;
+                right: -50px;
+            }
+            
+            .whatsapp-float {
+                bottom: 100px;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .product-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+            
+            .cart-dropdown {
+                width: 280px;
+                right: -70px;
+            }
+        }
+    </style>
+</body>
+</html>
