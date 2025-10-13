@@ -35,16 +35,7 @@
                 </ul>
             </nav>
             
-            <div class="header-actions">
-                <button class="search-btn" onclick="openSearch()">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="cart-btn" onclick="toggleCart()">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </button>
-            </div>
-        </div>
+            
     </header>
 
     <!-- Bouton WhatsApp Flottant -->
@@ -160,7 +151,7 @@
                             <label for="name">
                                 <i class="fas fa-user"></i> Nom complet *
                             </label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                             <div class="focus-line"></div>
                         </div>
                         
@@ -168,7 +159,15 @@
                             <label for="email">
                                 <i class="fas fa-envelope"></i> Email *
                             </label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
+                            <div class="focus-line"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Téléphone
+                            </label>
+                            <input type="tel" id="phone" name="phone">
                             <div class="focus-line"></div>
                         </div>
                         
@@ -176,7 +175,7 @@
                             <label for="subject">
                                 <i class="fas fa-tag"></i> Sujet *
                             </label>
-                            <select id="subject" required>
+                            <select id="subject" name="subject" required>
                                 <option value="">Sélectionnez un sujet</option>
                                 <option value="question">Question produit</option>
                                 <option value="commande">Suivi commande</option>
@@ -191,13 +190,21 @@
                             <label for="message">
                                 <i class="fas fa-comment"></i> Message *
                             </label>
-                            <textarea id="message" rows="6" required></textarea>
+                            <textarea id="message" name="message" rows="6" required></textarea>
                             <div class="focus-line"></div>
                         </div>
                         
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i> Envoyer le message
                         </button>
+                        
+                        <div class="email-alternative">
+                            <p>Ou envoyez-nous directement un email à :</p>
+                            <a href="mailto:contact@librairie-sportive.fr?subject=Contact%20Librairie%20Sportive" 
+                               class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i> contact@librairie-sportive.fr
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -213,9 +220,9 @@
                         </div>
                         <div class="map-info">
                             <h4>Notre boutique</h4>
-                            <p>123 Rue du Sport, 75000 Paris</p>
-                            <p>Métro: Sportville (Ligne 4)</p>
-                            <p>Parking gratuit disponible</p>
+                            <p>Boudiouck, Saint-Louis</p>
+                            <p>Sénégal</p>
+                            <p>Disponible sur rendez-vous</p>
                         </div>
                     </div>
                 </div>
@@ -705,6 +712,32 @@
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .email-alternative {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .email-alternative p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
         /* ===== MAP SECTION ===== */
         .map-section {
             margin-bottom: 80px;
@@ -1182,6 +1215,51 @@
             showNotification('Commande envoyée sur WhatsApp !');
         }
 
+        // ===== ENVOI DIRECT PAR EMAIL =====
+        function sendEmail(formData) {
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Construction du sujet de l'email
+            const emailSubject = `Contact Librairie Sportive - ${getSubjectText(subject)}`;
+            
+            // Construction du corps de l'email
+            const emailBody = `
+Nom: ${name}
+Email: ${email}
+Téléphone: ${phone || 'Non renseigné'}
+Sujet: ${getSubjectText(subject)}
+
+Message:
+${message}
+
+---
+Cet email a été envoyé depuis le formulaire de contact du site Librairie Sportive.
+            `.trim();
+            
+            // Création du lien mailto
+            const mailtoLink = `mailto:contact@librairie-sportive.fr?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Ouverture du client email
+            window.location.href = mailtoLink;
+            
+            return true;
+        }
+
+        function getSubjectText(subjectValue) {
+            const subjects = {
+                'question': 'Question produit',
+                'commande': 'Suivi commande',
+                'retour': 'Retour produit',
+                'partenariat': 'Partenariat',
+                'autre': 'Autre demande'
+            };
+            return subjects[subjectValue] || 'Autre demande';
+        }
+
         // ===== FAQ FUNCTIONALITY =====
         document.addEventListener('DOMContentLoaded', function() {
             // FAQ toggle
@@ -1198,8 +1276,30 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    showNotification('Message envoyé avec succès !');
-                    contactForm.reset();
+                    
+                    const formData = new FormData(contactForm);
+                    
+                    // Validation basique
+                    if (!formData.get('name') || !formData.get('email') || !formData.get('subject') || !formData.get('message')) {
+                        showNotification('Veuillez remplir tous les champs obligatoires', 'error');
+                        return;
+                    }
+                    
+                    // Envoi par email
+                    const success = sendEmail(formData);
+                    
+                    if (success) {
+                        showNotification('Ouverture de votre client email... Rédigez et envoyez votre message !');
+                        contactForm.reset();
+                        
+                        // Réinitialiser les lignes de focus
+                        const focusLines = document.querySelectorAll('.focus-line');
+                        focusLines.forEach(line => {
+                            line.style.width = '0';
+                        });
+                    } else {
+                        showNotification('Erreur lors de l\'envoi du message', 'error');
+                    }
                 });
             }
 
@@ -1209,9 +1309,9 @@
         });
 
         // ===== NOTIFICATIONS =====
-        function showNotification(message) {
+        function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
-            notification.className = 'notification';
+            notification.className = `notification ${type}`;
             notification.textContent = message;
             document.body.appendChild(notification);
             
@@ -1224,7 +1324,7 @@
                 setTimeout(() => {
                     document.body.removeChild(notification);
                 }, 300);
-            }, 3000);
+            }, 4000);
         }
 
         // ===== ANIMATIONS =====

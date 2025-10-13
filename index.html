@@ -34,16 +34,6 @@
                     </a></li>
                 </ul>
             </nav>
-            
-            <div class="header-actions">
-                <button class="search-btn" onclick="openSearch()">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="cart-btn" onclick="toggleCart()">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </button>
-            </div>
         </div>
     </header>
 
@@ -92,20 +82,6 @@
                         Notre histoire
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number" data-count="13">0</div>
-                        <div class="stat-label">Ans d'expérience</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number" data-count="50">0</div>
-                        <div class="stat-label">Clients satisfaits</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number" data-count="98">0</div>
-                        <div class="stat-label">% Satisfaction</div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="hero-background">
@@ -127,7 +103,7 @@
             <div class="categories-grid">
                 <div class="category-card">
                     <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Maillots de sport personnalisés">
+                        <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Maillots de sport personnalisés">
                         <div class="category-overlay">
                             <div class="category-icon">
                                 <i class="fas fa-tshirt"></i>
@@ -151,7 +127,7 @@
                 
                 <div class="category-card">
                     <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Romans sportifs">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Romans sportifs">
                         <div class="category-overlay">
                             <div class="category-icon">
                                 <i class="fas fa-book-open"></i>
@@ -235,7 +211,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <i class="fas fa-user"></i>
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Thomas M.">
                         </div>
                         <div class="author-info">
                             <h4>Thomas M.</h4>
@@ -257,7 +233,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <i class="fas fa-user"></i>
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Sophie L.">
                         </div>
                         <div class="author-info">
                             <h4>Sophie L.</h4>
@@ -279,7 +255,7 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <i class="fas fa-user"></i>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Marc D.">
                         </div>
                         <div class="author-info">
                             <h4>Marc D.</h4>
@@ -413,7 +389,7 @@
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
                 cartItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80'">
                     <div class="cart-item-details">
                         <h4>${item.name}</h4>
                         <p>${item.price.toLocaleString()} FCFA</p>
@@ -467,26 +443,6 @@
             showNotification('Commande envoyée sur WhatsApp !');
         }
 
-        // ===== ANIMATION DES NOMBRES =====
-        function animateNumbers() {
-            const numbers = document.querySelectorAll('.stat-number');
-            numbers.forEach(number => {
-                const target = parseInt(number.getAttribute('data-count'));
-                let current = 0;
-                const increment = target / 50;
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        number.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        number.textContent = Math.floor(current);
-                    }
-                }, 40);
-            });
-        }
-
         // ===== ANIMATIONS AU DÉFILEMENT =====
         function checkScroll() {
             const elements = document.querySelectorAll('.category-card, .feature-card, .testimonial-card, .section-header');
@@ -497,11 +453,6 @@
                 
                 if (elementTop < windowHeight - 100) {
                     element.classList.add('visible');
-                    
-                    // Animer les nombres quand les stats deviennent visibles
-                    if (element.classList.contains('section-header') && document.querySelector('.hero-stats').classList.contains('visible')) {
-                        animateNumbers();
-                    }
                 }
             });
         }
@@ -714,7 +665,7 @@
         .home-hero {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 100px 0;
+            padding: 120px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -768,32 +719,9 @@
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin-bottom: 3rem;
             transform: translateY(20px);
             opacity: 0;
             transition: transform 0.8s ease 0.4s, opacity 0.8s ease 0.4s;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
         }
 
         .floating-elements {
@@ -1064,12 +992,13 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .author-info h4 {
@@ -1424,14 +1353,6 @@
             }
             
             .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .hero-stats {
-                gap: 30px;
-            }
-            
-            .stat-number {
                 font-size: 2rem;
             }
             
