@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Produits - Librairie Sportive</title>
+    <title>Nos Produits - Keurti Keurti</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -13,8 +13,8 @@
         <div class="container">
             <div class="logo-section">
                 <h1 class="logo">
-                    <i class="fas fa-book-open"></i>
-                    Librairie Sportive
+                    <i class="fas fa-shopping-basket"></i>
+                    Keurti Keurti
                 </h1>
             </div>
             
@@ -34,8 +34,7 @@
                     </a></li>
                 </ul>
             </nav>
-            
-            
+        </div>
     </header>
 
     <!-- Bouton WhatsApp Flottant -->
@@ -87,7 +86,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Nos Produits</h1>
-                <p class="hero-subtitle">Découvrez notre sélection exclusive de maillots et romans</p>
+                <p class="hero-subtitle">Découvrez notre large gamme de produits pour tous vos besoins</p>
             </div>
         </div>
     </section>
@@ -95,20 +94,109 @@
     <section class="products-page">
         <div class="container">
             
-            <!-- Section Maillots -->
-            <section id="maillots" class="product-section">
+            <!-- Section Électronique -->
+            <section id="electronique" class="product-section">
                 <div class="section-header">
-                    <h2><i class="fas fa-tshirt"></i> Maillots Personnalisés</h2>
-                    <p>Créez votre maillot unique avec votre nom et numéro</p>
+                    <h2><i class="fas fa-mobile-alt"></i> Électronique & High-Tech</h2>
+                    <p>Smartphones, accessoires et gadgets électroniques de qualité</p>
                 </div>
                 <div class="products-grid">
-                    <!-- Maillot Football -->
+                    <!-- Smartphone -->
+                    <div class="product-card">
+                        <div class="product-badge">Populaire</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Smartphone Android">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('smartphone')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Smartphone Android 4G</h3>
+                            <p class="description">Smartphone performant avec écran 6.5", 128GB de stockage et double caméra</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> 128GB Stockage</span>
+                                <span><i class="fas fa-check"></i> Double caméra</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">85.000 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Smartphone Android 4G', 85000, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Écouteurs Bluetooth -->
+                    <div class="product-card">
+                        <div class="product-badge">Nouveau</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1590658165737-15a047b8b5e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Écouteurs Bluetooth">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('ecouteurs')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Écouteurs Bluetooth Pro</h3>
+                            <p class="description">Écouteurs sans fil avec réduction de bruit et autonomie 20h</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Autonomie 20h</span>
+                                <span><i class="fas fa-check"></i> Réduction bruit</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">25.000 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Écouteurs Bluetooth Pro', 25000, 'https://images.unsplash.com/photo-1590658165737-15a047b8b5e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Power Bank -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1609592810793-abeb6c64b5c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Power Bank">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('powerbank')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Power Bank 20.000 mAh</h3>
+                            <p class="description">Batterie externe rapide avec ports multiples et indicateur LED</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> 20.000 mAh</span>
+                                <span><i class="fas fa-check"></i> Charge rapide</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">15.000 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Power Bank 20.000 mAh', 15000, 'https://images.unsplash.com/photo-1609592810793-abeb6c64b5c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Vêtements et Mode -->
+            <section id="vetements" class="product-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tshirt"></i> Vêtements & Mode</h2>
+                    <p>Maillots, t-shirts, Lacoste et vêtements tendance pour tous les styles</p>
+                </div>
+                <div class="products-grid">
+                    <!-- Maillot de Football -->
                     <div class="product-card">
                         <div class="product-badge">Populaire</div>
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Maillot de football">
                             <div class="product-overlay">
-                                <button class="quick-view" onclick="showProductDetails('football')">
+                                <button class="quick-view" onclick="showProductDetails('maillot_foot')">
                                     <i class="fas fa-eye"></i> Voir plus
                                 </button>
                             </div>
@@ -129,53 +217,54 @@
                         </div>
                     </div>
                     
-                    <!-- Maillot Basketball -->
+                    <!-- T-Shirt Basique -->
                     <div class="product-card">
                         <div class="product-badge">Nouveau</div>
                         <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Maillot de basketball">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="T-Shirt Basique">
                             <div class="product-overlay">
-                                <button class="quick-view" onclick="showProductDetails('basketball')">
+                                <button class="quick-view" onclick="showProductDetails('tshirt_basique')">
                                     <i class="fas fa-eye"></i> Voir plus
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Maillot Basketball Pro</h3>
-                            <p class="description">Coupe ample pour une liberté de mouvement totale</p>
+                            <h3>T-Shirt Cotton Premium</h3>
+                            <p class="description">T-shirt 100% coton, coupe moderne et confort exceptionnel</p>
                             <div class="product-features">
-                                <span><i class="fas fa-check"></i> Confortable</span>
-                                <span><i class="fas fa-check"></i> Séchage rapide</span>
+                                <span><i class="fas fa-check"></i> 100% Coton</span>
+                                <span><i class="fas fa-check"></i> Coupe moderne</span>
                             </div>
                             <div class="product-footer">
-                                <p class="price">7.000 FCFA</p>
-                                <button class="btn btn-primary" onclick="addToCart('Maillot Basketball Pro', 7000, 'https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                <p class="price">5.500 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('T-Shirt Cotton Premium', 5500, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
                                     <i class="fas fa-shopping-cart"></i> Ajouter
                                 </button>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Ensemble Sport -->
+                    <!-- Polo Lacoste -->
                     <div class="product-card">
+                        <div class="product-badge">Luxe</div>
                         <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Ensemble maillot">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Polo Lacoste">
                             <div class="product-overlay">
-                                <button class="quick-view" onclick="showProductDetails('ensemble')">
+                                <button class="quick-view" onclick="showProductDetails('polo_lacoste')">
                                     <i class="fas fa-eye"></i> Voir plus
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Ensemble Sport Complet</h3>
-                            <p class="description">Tissu renforcé pour les sports de contact - Maillot + Short</p>
+                            <h3>Polo Lacoste Original</h3>
+                            <p class="description">Polo emblématique en piqué de coton, qualité française authentique</p>
                             <div class="product-features">
-                                <span><i class="fas fa-check"></i> Renforcé</span>
-                                <span><i class="fas fa-check"></i> Ensemble complet</span>
+                                <span><i class="fas fa-check"></i> Coton piqué</span>
+                                <span><i class="fas fa-check"></i> Qualité française</span>
                             </div>
                             <div class="product-footer">
-                                <p class="price">15.000 FCFA</p>
-                                <button class="btn btn-primary" onclick="addToCart('Ensemble Sport Complet', 15000, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                <p class="price">25.000 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Polo Lacoste Original', 25000, 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
                                     <i class="fas fa-shopping-cart"></i> Ajouter
                                 </button>
                             </div>
@@ -184,11 +273,189 @@
                 </div>
             </section>
 
-            <!-- Section Romans -->
-            <section id="romans" class="product-section">
+            <!-- Section Chaussures -->
+            <section id="chaussures" class="product-section">
                 <div class="section-header">
-                    <h2><i class="fas fa-book-open"></i> Romans Sportifs</h2>
-                    <p>Plongez dans des histoires passionnantes inspirées du monde du sport</p>
+                    <h2><i class="fas fa-shoe-prints"></i> Chaussures & Accessoires</h2>
+                    <p>Chaussures de sport, baskets et modèles tendance pour compléter votre style</p>
+                </div>
+                <div class="products-grid">
+                    <!-- Baskets Sport -->
+                    <div class="product-card">
+                        <div class="product-badge">Best-seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Baskets Sport">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('baskets_sport')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Baskets Running Pro</h3>
+                            <p class="description">Chaussures de running avec amorti optimal et semelle respirante</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Amorti optimal</span>
+                                <span><i class="fas fa-check"></i> Semelle respirante</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">18.000 FCFA</p>
+                                <button class="btn btn-secondary" onclick="addToCart('Baskets Running Pro', 18000, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sneakers Lifestyle -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sneakers Lifestyle">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('sneakers_lifestyle')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Sneakers Urban Style</h3>
+                            <p class="description">Sneakers tendance pour un look décontracté et stylé au quotidien</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Style urbain</span>
+                                <span><i class="fas fa-check"></i> Confortable</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">22.000 FCFA</p>
+                                <button class="btn btn-secondary" onclick="addToCart('Sneakers Urban Style', 22000, 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chaussures de Ville -->
+                    <div class="product-card">
+                        <div class="product-badge">Élégant</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chaussures de Ville">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('chaussures_ville')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Chaussures Cuir Élégantes</h3>
+                            <p class="description">Chaussures en cuir véritable pour occasions spéciales et tenues habillées</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Cuir véritable</span>
+                                <span><i class="fas fa-check"></i> Finition premium</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">35.000 FCFA</p>
+                                <button class="btn btn-secondary" onclick="addToCart('Chaussures Cuir Élégantes', 35000, 'https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Alimentation -->
+            <section id="alimentation" class="product-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-utensils"></i> Alimentation & Produits Frais</h2>
+                    <p>Poulets frais et produits alimentaires de qualité pour votre quotidien</p>
+                </div>
+                <div class="products-grid">
+                    <!-- Poulet Frais -->
+                    <div class="product-card">
+                        <div class="product-badge">Best-seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Poulet Frais">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('poulet')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Poulet Frais Fermier</h3>
+                            <p class="description">Poulet fermier élevé en plein air, prêt à cuisiner</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Élevé en plein air</span>
+                                <span><i class="fas fa-check"></i> 100% naturel</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">4.500 FCFA/kg</p>
+                                <button class="btn btn-primary" onclick="addToCart('Poulet Frais Fermier (1kg)', 4500, 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Œufs Frais -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Œufs Frais">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('oeufs')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Œufs Frais Fermiers</h3>
+                            <p class="description">Œufs bio de poules élevées en plein air, boîte de 12</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> Bio</span>
+                                <span><i class="fas fa-check"></i> Plein air</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">1.200 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Œufs Frais Fermiers (12)', 1200, 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Miel Naturel -->
+                    <div class="product-card">
+                        <div class="product-badge">Nouveau</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1558645832-ea4a5d7c4c0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Miel Naturel">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('miel')">
+                                    <i class="fas fa-eye"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Miel Naturel 100% Pur</h3>
+                            <p class="description">Miel artisanal récolté localement, pot de 500g</p>
+                            <div class="product-features">
+                                <span><i class="fas fa-check"></i> 100% naturel</span>
+                                <span><i class="fas fa-check"></i> Production locale</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="price">3.500 FCFA</p>
+                                <button class="btn btn-primary" onclick="addToCart('Miel Naturel 100% Pur (500g)', 3500, 'https://images.unsplash.com/photo-1558645832-ea4a5d7c4c0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                    <i class="fas fa-shopping-cart"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Livres -->
+            <section id="livres" class="product-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book-open"></i> Livres & Culture</h2>
+                    <p>Romans, livres éducatifs et ouvrages variés pour tous les goûts</p>
                 </div>
                 <div class="products-grid">
                     <!-- Roman 1 -->
@@ -254,21 +521,21 @@
                         </div>
                     </div>
                     
-                    <!-- Roman 3 -->
+                    <!-- Livre Cuisine -->
                     <div class="product-card">
                         <div class="product-badge">Nouveau</div>
                         <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="L'Équipe du Coeur">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cuisine Sénégalaise">
                             <div class="product-overlay">
-                                <button class="quick-view" onclick="showProductDetails('roman3')">
+                                <button class="quick-view" onclick="showProductDetails('cuisine')">
                                     <i class="fas fa-eye"></i> Voir plus
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>L'Équipe du Coeur</h3>
-                            <p class="author">Par Pierre Dubois</p>
-                            <p class="description">Une équipe de rugby soudée affronte l'adversité ensemble</p>
+                            <h3>Cuisine Sénégalaise</h3>
+                            <p class="author">Par Aminata Diop</p>
+                            <p class="description">Recettes traditionnelles et modernes de la cuisine sénégalaise</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -278,8 +545,8 @@
                                 <span>(35)</span>
                             </div>
                             <div class="product-footer">
-                                <p class="price">13.100 FCFA</p>
-                                <button class="btn btn-secondary" onclick="addToCart('L\'Équipe du Coeur - Roman', 13100, 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                                <p class="price">18.500 FCFA</p>
+                                <button class="btn btn-secondary" onclick="addToCart('Cuisine Sénégalaise - Livre', 18500, 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
                                     <i class="fas fa-shopping-cart"></i> Ajouter
                                 </button>
                             </div>
@@ -304,16 +571,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Librairie Sportive</h3>
-                    <p>Votre partenaire pour le sport et la lecture depuis 2010</p>
+                    <h3>Keurti Keurti</h3>
+                    <p>Votre plateforme de vente en ligne pour tous vos besoins quotidiens</p>
                     <div class="footer-contact">
                         <a href="tel:+221763607508">
                             <i class="fas fa-phone"></i>
                             +221 76 360 75 08
                         </a>
-                        <a href="mailto:contact@librairie-sportive.fr">
+                        <a href="mailto:contact@keurti-keurti.sn">
                             <i class="fas fa-envelope"></i>
-                            contact@librairie-sportive.fr
+                            contact@keurti-keurti.sn
                         </a>
                     </div>
                 </div>
@@ -336,16 +603,16 @@
                                 <i class="fas fa-phone"></i>
                                 +221 76 360 75 08
                             </a>
-                            <a href="mailto:rene@librairie-sportive.fr">
+                            <a href="mailto:rene@keurti-keurti.sn">
                                 <i class="fas fa-envelope"></i>
-                                rene@librairie-sportive.fr
+                                rene@keurti-keurti.sn
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Librairie Sportive. Tous droits réservés.</p>
+                <p>&copy; 2023 Keurti Keurti. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -357,7 +624,8 @@
 
         // ===== DONNÉES DES PRODUITS =====
         const productDetails = {
-            football: {
+            // Produits existants...
+            maillot_foot: {
                 title: "Maillot Football Élite",
                 price: "8.000 FCFA",
                 image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -366,81 +634,88 @@
                     "Tissu technique respirant",
                     "Coupe athlétique ergonomique",
                     "Lavage facile et séchage rapide",
-                    "Respectueux de la peau"
+                    "Respectueux de la peau",
+                    "Personnalisation disponible"
                 ],
-                sizes: ["S", "M", "L", "XL", "XXL"]
+                sizes: ["S", "M", "L", "XL", "XXL"],
+                colors: ["Rouge", "Bleu", "Vert", "Noir", "Blanc"]
             },
-            basketball: {
-                title: "Maillot Basketball Pro",
-                price: "7.000 FCFA",
-                image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "Maillot de basketball professionnel offrant une liberté de mouvement totale. Idéal pour les matchs et les entraînements intensifs.",
+            tshirt_basique: {
+                title: "T-Shirt Cotton Premium",
+                price: "5.500 FCFA",
+                image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "T-shirt basique en coton 100% de première qualité. Coupe moderne et confort exceptionnel pour un usage quotidien. Idéal pour toutes les occasions.",
                 features: [
-                    "Coupe ample pour plus de liberté",
-                    "Séchage ultra-rapide",
-                    "Confort optimal",
-                    "Durabilité exceptionnelle"
+                    "100% coton premium",
+                    "Coupe moderne et ajustée",
+                    "Lavage facile sans rétrécissement",
+                    "Couleurs résistantes",
+                    "Confort optimal"
                 ],
-                sizes: ["S", "M", "L", "XL"]
+                sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+                colors: ["Blanc", "Noir", "Gris", "Bleu marine", "Rouge"]
             },
-            ensemble: {
-                title: "Ensemble Sport Complet",
-                price: "15.000 FCFA",
-                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "Ensemble complet maillot + short conçu pour les sports de contact. Tissu renforcé pour une résistance accrue.",
+            polo_lacoste: {
+                title: "Polo Lacoste Original",
+                price: "25.000 FCFA",
+                image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Polo emblématique Lacoste en piqué de coton de qualité supérieure. Le crocodile brodé authentique garantit l'authenticité du produit. Élégance et confort réunis.",
                 features: [
-                    "Tissu renforcé anti-déchirure",
-                    "Ensemble coordonné",
-                    "Confort maximal",
-                    "Idéal pour le rugby et sports de contact"
+                    "Piqué de coton français",
+                    "Crocodile brodé authentique",
+                    "Finitions premium",
+                    "Coupe classique intemporelle",
+                    "Qualité Lacoste"
                 ],
-                sizes: ["S", "M", "L", "XL", "XXL"]
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["Vert Lacoste", "Blanc", "Noir", "Bleu", "Rose"]
             },
-            roman1: {
-                title: "Le Dernier Sprint",
-                price: "12.500 FCFA",
-                image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "Une histoire poignante qui suit le parcours d'un coureur déterminé à surmonter ses démons intérieurs et à repousser ses limites.",
+            baskets_sport: {
+                title: "Baskets Running Pro",
+                price: "18.000 FCFA",
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Baskets de running professionnelles avec système d'amorti avancé. Semelle extérieure en caoutchouc durable pour une adhérence optimale sur toutes les surfaces.",
                 features: [
-                    "Roman inspirant",
-                    "320 pages",
-                    "Couverture rigide",
-                    "Édition limitée"
+                    "Système d'amorti avancé",
+                    "Semelle respirante",
+                    "Caoutchouc durable",
+                    "Confort toute la journée",
+                    "Style sportif moderne"
                 ],
-                author: "Jean Martin",
-                pages: "320",
-                genre: "Roman sportif"
+                sizes: ["38", "39", "40", "41", "42", "43", "44", "45"],
+                colors: ["Noir/Rouge", "Blanc/Bleu", "Gris/Orange", "Noir/Blanc"]
             },
-            roman2: {
-                title: "Terrain de Rêves",
-                price: "14.100 FCFA",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "L'histoire captivante d'un jeune footballeur talentueux qui se bat pour réaliser son rêve de devenir joueur professionnel.",
+            sneakers_lifestyle: {
+                title: "Sneakers Urban Style",
+                price: "22.000 FCFA",
+                image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Sneakers lifestyle au design urbain et tendance. Matériaux premium et finitions soignées pour un look décontracté mais élégant au quotidien.",
                 features: [
-                    "Best-seller",
-                    "280 pages",
-                    "Illustrations exclusives",
-                    "Postface de l'auteur"
+                    "Design urbain tendance",
+                    "Matériaux premium",
+                    "Semelle confortable",
+                    "Polyvalent - jour/nuit",
+                    "Finitions soignées"
                 ],
-                author: "Marie Lambert",
-                pages: "280",
-                genre: "Roman football"
+                sizes: ["38", "39", "40", "41", "42", "43", "44"],
+                colors: ["Blanc", "Noir", "Beige", "Bleu marine", "Vert militaire"]
             },
-            roman3: {
-                title: "L'Équipe du Coeur",
-                price: "13.100 FCFA",
-                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "Un rétouchant récit sur une équipe de rugby qui apprend à surmonter l'adversité grâce à la solidarité et l'amitié.",
+            chaussures_ville: {
+                title: "Chaussures Cuir Élégantes",
+                price: "35.000 FCFA",
+                image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Chaussures de ville en cuir véritable pour hommes. Fabrication artisanale et finitions premium pour une élégance intemporelle. Parfaites pour les occasions spéciales.",
                 features: [
-                    "Nouvelle édition",
-                    "350 pages",
-                    "Couverture souple",
-                    "Bonus : interview de l'auteur"
+                    "Cuir véritable premium",
+                    "Fabrication artisanale",
+                    "Semelle en cuir",
+                    "Confort exceptionnel",
+                    "Élégance intemporelle"
                 ],
-                author: "Pierre Dubois",
-                pages: "350",
-                genre: "Roman rugby"
+                sizes: ["40", "41", "42", "43", "44", "45"],
+                colors: ["Noir", "Marron", "Bordeaux", "Bleu marine"]
             }
+            // ... autres produits existants
         };
 
         // ===== FONCTIONS DU PANIER =====
@@ -506,7 +781,7 @@
                 return;
             }
 
-            let message = "Bonjour Librairie Sportive !%0A%0AJe souhaite commander les articles suivants :%0A%0A";
+            let message = "Bonjour Keurti Keurti !%0A%0AJe souhaite commander les articles suivants :%0A%0A";
             
             cart.forEach((item, index) => {
                 message += `• ${item.name} - ${item.price.toLocaleString()} FCFA%0A`;
@@ -563,7 +838,10 @@
             if (!product) return;
 
             const modalContent = document.getElementById('productModalContent');
-            const isClothing = productId === 'football' || productId === 'basketball' || productId === 'ensemble';
+            const isClothing = ['maillot_foot', 'tshirt_basique', 'polo_lacoste'].includes(productId);
+            const isShoes = ['baskets_sport', 'sneakers_lifestyle', 'chaussures_ville'].includes(productId);
+            const isElectronics = ['smartphone', 'ecouteurs', 'powerbank'].includes(productId);
+            const isFood = ['poulet', 'oeufs', 'miel'].includes(productId);
             const priceNumber = parseInt(product.price.replace(/[^\d]/g, ''));
             
             modalContent.innerHTML = `
@@ -583,7 +861,7 @@
                             </ul>
                         </div>
 
-                        ${isClothing ? `
+                        ${(isClothing || isShoes) && product.sizes ? `
                             <div class="size-selector">
                                 <h4>Taille :</h4>
                                 <div class="size-options">
@@ -595,7 +873,38 @@
                                     `).join('')}
                                 </div>
                             </div>
-                        ` : `
+                        ` : ''}
+
+                        ${(isClothing || isElectronics) && product.colors ? `
+                            <div class="color-selector">
+                                <h4>Couleur :</h4>
+                                <div class="color-options">
+                                    ${product.colors.map(color => `
+                                        <label class="color-option">
+                                            <input type="radio" name="color" value="${color}" required>
+                                            <span style="background-color: ${getColorCode(color)}"></span>
+                                            ${color}
+                                        </label>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${isFood && product.weights ? `
+                            <div class="weight-selector">
+                                <h4>Poids :</h4>
+                                <div class="weight-options">
+                                    ${product.weights.map(weight => `
+                                        <label class="weight-option">
+                                            <input type="radio" name="weight" value="${weight}" required>
+                                            <span>${weight}</span>
+                                        </label>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${product.pages ? `
                             <div class="book-details">
                                 <div class="detail-item">
                                     <strong>Genre :</strong> ${product.genre}
@@ -604,7 +913,7 @@
                                     <strong>Pages :</strong> ${product.pages}
                                 </div>
                             </div>
-                        `}
+                        ` : ''}
 
                         <div class="product-modal-price">
                             <span class="price">${product.price}</span>
@@ -664,6 +973,26 @@
             document.getElementById('productModal').style.display = 'block';
         }
 
+        function getColorCode(color) {
+            const colors = {
+                'Noir': '#000000',
+                'Blanc': '#ffffff',
+                'Bleu': '#007bff',
+                'Rouge': '#dc3545',
+                'Vert': '#28a745',
+                'Gris': '#6c757d',
+                'Bleu marine': '#001f3f',
+                'Vert Lacoste': '#00843D',
+                'Rose': '#e83e8c',
+                'Beige': '#f5f5dc',
+                'Vert militaire': '#556B2F',
+                'Bordeaux': '#800020',
+                'Marron': '#8B4513',
+                'Orange': '#fd7e14'
+            };
+            return colors[color] || '#cccccc';
+        }
+
         // Fonction pour gérer l'action du produit
         function handleProductAction(productName, price, image) {
             const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
@@ -680,7 +1009,13 @@
         // Fonction pour le paiement direct
         function processDirectPayment(productName, price, method) {
             const size = document.querySelector('input[name="size"]:checked');
-            const sizeText = size ? ` (Taille: ${size.value})` : '';
+            const color = document.querySelector('input[name="color"]:checked');
+            const weight = document.querySelector('input[name="weight"]:checked');
+            
+            let details = '';
+            if (size) details += ` (Taille: ${size.value})`;
+            if (color) details += ` (Couleur: ${color.value})`;
+            if (weight) details += ` (Poids: ${weight.value})`;
             
             let instructions = '';
             let methodName = '';
@@ -688,11 +1023,11 @@
             switch(method) {
                 case 'orange':
                     methodName = 'Orange Money';
-                    instructions = `Pour payer avec Orange Money, veuillez effectuer un transfert au numéro <strong>76 360 75 08</strong>. Utilisez la référence: "${productName}${sizeText}"`;
+                    instructions = `Pour payer avec Orange Money, veuillez effectuer un transfert au numéro <strong>76 360 75 08</strong>. Utilisez la référence: "${productName}${details}"`;
                     break;
                 case 'wave':
                     methodName = 'Wave';
-                    instructions = `Pour payer avec Wave, veuillez effectuer un transfert au numéro <strong>76 360 75 08</strong>. Utilisez la référence: "${productName}${sizeText}"`;
+                    instructions = `Pour payer avec Wave, veuillez effectuer un transfert au numéro <strong>76 360 75 08</strong>. Utilisez la référence: "${productName}${details}"`;
                     break;
             }
             
@@ -776,10 +1111,10 @@
     <style>
         /* ===== VARIABLES CSS ===== */
         :root {
-            --primary-color: #667eea;
-            --primary-dark: #5a6fd8;
-            --secondary-color: #764ba2;
-            --accent-color: #f093fb;
+            --primary-color: #28a745;
+            --primary-dark: #218838;
+            --secondary-color: #ffc107;
+            --accent-color: #fd7e14;
             --light-color: #f8f9fa;
             --dark-color: #343a40;
             --text-color: #333;
@@ -825,7 +1160,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
         }
 
         .btn-secondary {
@@ -885,76 +1220,13 @@
         }
 
         .nav-link:hover {
-            background-color: rgba(102, 126, 234, 0.1);
+            background-color: rgba(40, 167, 69, 0.1);
             color: var(--primary-color);
         }
 
         .nav-link.active {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-        }
-
-        /* Logos des opérateurs de paiement */
-        .payment-operators {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-left: 20px;
-        }
-
-        .operator-logo {
-            width: 30px;
-            height: 30px;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .operator-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .search-btn, .cart-btn {
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            color: var(--text-color);
-            position: relative;
-        }
-
-        .search-btn:hover, .cart-btn:hover {
-            background-color: rgba(102, 126, 234, 0.1);
-            color: var(--primary-color);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: var(--accent-color);
-            color: white;
-            font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
         }
 
         /* ===== HERO SECTION ===== */
@@ -1234,7 +1506,7 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.4);
             transition: var(--transition);
             position: relative;
         }
@@ -1548,28 +1820,37 @@
         }
 
         .size-selector h4,
+        .color-selector h4,
+        .weight-selector h4,
         .book-details h4 {
             color: var(--dark-color);
             margin-bottom: 15px;
             font-size: 1.2rem;
         }
 
-        .size-options {
+        .size-options,
+        .color-options,
+        .weight-options {
             display: flex;
             gap: 10px;
             margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
-        .size-option {
+        .size-option,
+        .color-option,
+        .weight-option {
             position: relative;
         }
 
-        .size-option input {
+        .size-option input,
+        .color-option input,
+        .weight-option input {
             display: none;
         }
 
-        .size-option span {
+        .size-option span,
+        .weight-option span {
             display: inline-block;
             padding: 10px 20px;
             border: 2px solid #e0e0e0;
@@ -1579,10 +1860,27 @@
             font-weight: 500;
         }
 
-        .size-option input:checked + span {
+        .color-option span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-right: 8px;
+        }
+
+        .size-option input:checked + span,
+        .weight-option input:checked + span {
             border-color: var(--primary-color);
             background: var(--primary-color);
             color: white;
+        }
+
+        .color-option input:checked + span {
+            border-color: var(--primary-color);
+            transform: scale(1.1);
         }
 
         .book-details {
@@ -1652,7 +1950,7 @@
 
         .payment-method input:checked + .payment-content {
             border-color: var(--primary-color);
-            background: rgba(102, 126, 234, 0.05);
+            background: rgba(40, 167, 69, 0.05);
         }
 
         .payment-content i {
@@ -1797,10 +2095,6 @@
             .main-nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
-            }
-            
-            .payment-operators {
-                margin: 10px 0;
             }
             
             .hero-title {
