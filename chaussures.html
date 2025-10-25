@@ -1207,7 +1207,7 @@
                     <li><a href="produits.html" class="nav-link">
                         <span>Produits</span>
                     </a></li>
-                    <li><a href="chaussures.html" class="nav-link active">
+                    <li><a href="/pages/chaussures.html" class="nav-link active">
                         <span>Chaussures</span>
                     </a></li>
                     <li><a href="a-propos.html" class="nav-link">
@@ -1277,7 +1277,7 @@
                 
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">80+</div>
+                        <div class="stat-number">100+</div>
                         <div class="stat-label">Modèles</div>
                     </div>
                     <div class="stat-item">
@@ -1312,10 +1312,12 @@
                     <select class="filter-select" id="categorySelect" onchange="filterProducts()">
                         <option value="all">Toutes les chaussures</option>
                         <option value="sport">Sport</option>
+                        <option value="football">Football</option>
                         <option value="ville">Ville</option>
                         <option value="luxe">Luxe</option>
                         <option value="ete">Été</option>
                         <option value="hiver">Hiver</option>
+                        <option value="maillots">Maillots de Football</option>
                     </select>
                 </div>
                 
@@ -1383,7 +1385,7 @@
                         <li><a href="vetements.html">Vêtements</a></li>
                         <li><a href="chaussures.html">Chaussures</a></li>
                         <li><a href="alimentation.html">Alimentation</a></li>
-                        <li><a href="livres.html">Livres</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1420,12 +1422,12 @@
         // ===== DONNÉES DES PRODUITS =====
         const productDetails = {
             baskets_sport: {
-                id: "baskets_sport",
-                title: "Baskets Running Pro",
-                price: 18000,
+                id: "Stan-smith",
+                title: "Stan-smith",
+                price: 16000,
                 oldPrice: 22000,
-                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "Baskets de running professionnelles avec système d'amorti avancé et semelle extérieure en caoutchouc durable pour une adhérence optimale sur toutes les surfaces.",
+                image: "images/blanc.jpg",
+                description: "Stan-smith professionnelles avec système d'amorti avancé et semelle extérieure en caoutchouc durable pour une adhérence optimale sur toutes les surfaces.",
                 features: [
                     "Système d'amorti avancé",
                     "Semelle respirante",
@@ -1439,12 +1441,12 @@
                 badge: "Best-seller"
             },
             sneakers_lifestyle: {
-                id: "sneakers_lifestyle",
-                title: "Sneakers Urban Style",
-                price: 22000,
-                oldPrice: 28000,
-                image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "Sneakers lifestyle au design urbain et tendance. Matériaux premium et finitions soignées pour un look décontracté mais élégant au quotidien.",
+                id: "Nike Airforce one",
+                title: "Nike Airforce one",
+                price: 15000,
+                oldPrice: 20000,
+                image: "images/noir.jpg",
+                description: "Nike Airforce one au design urbain et tendance. Matériaux premium et finitions soignées pour un look décontracté mais élégant au quotidien.",
                 features: [
                     "Design urbain tendance",
                     "Matériaux premium",
@@ -1459,9 +1461,9 @@
             chaussures_ville: {
                 id: "chaussures_ville",
                 title: "Chaussures Cuir Élégantes",
-                price: 35000,
-                oldPrice: 45000,
-                image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                price: 16000,
+                oldPrice: 20000,
+                image: "images/wnabz.jpg",
                 description: "Chaussures de ville en cuir véritable pour hommes. Fabrication artisanale et finitions premium pour une élégance intemporelle. Parfaites pour les occasions spéciales.",
                 features: [
                     "Cuir véritable premium",
@@ -1476,11 +1478,11 @@
                 badge: "Élégant"
             },
             sandales_ete: {
-                id: "sandales_ete",
-                title: "Sandales Confort Été",
+                id: "",
+                title: "",
                 price: 8500,
                 oldPrice: 12000,
-                image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "images/nike.jpg",
                 description: "Sandales légères et confortables spécialement conçues pour la saison estivale. Semelle antidérapante et matériau respirant pour un confort optimal.",
                 features: [
                     "Léger et confortable",
@@ -1497,9 +1499,9 @@
             bottes_cuir: {
                 id: "bottes_cuir",
                 title: "Bottes Cuir Classiques",
-                price: 28000,
-                oldPrice: 35000,
-                image: "https://images.unsplash.com/photo-1542280756-74b2f55e73ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                price: 20000,
+                oldPrice: 30000,
+                image: "images/wnbw23.jpg",
                 description: "Bottes classiques en cuir véritable avec semelle crantée pour une meilleure adhérence. Doublure chaude pour un confort optimal pendant la saison froide.",
                 features: [
                     "Cuir véritable",
@@ -1515,11 +1517,11 @@
             },
             escarpins: {
                 id: "escarpins",
-                title: "Escarpins Élégants",
-                price: 15000,
+                title: "Vans oldschool",
+                price: 17000,
                 oldPrice: 20000,
                 image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                description: "Escarpins hauts talons en cuir verni pour occasions spéciales. Design élégant avec bout pointu et talon stable pour un confort optimal même en soirée.",
+                description: "Vans oldschool verni pour occasions spéciales. Design élégant avec bout pointu et talon stable pour un confort optimal même en soirée.",
                 features: [
                     "Talons 10cm stables",
                     "Cuir verni premium",
@@ -1552,9 +1554,9 @@
             mocassins: {
                 id: "mocassins",
                 title: "Mocassins Cuir Luxe",
-                price: 32000,
-                oldPrice: 40000,
-                image: "https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                price: 25000,
+                oldPrice: 30000,
+                image: "images/Mocassins Cuir Luxe.jpg",
                 description: "Mocassins en cuir pleine fleur avec finitions main. Élégance et confort réunis pour un style raffiné au quotidien ou en occasion spéciale.",
                 features: [
                     "Cuir pleine fleur",
@@ -1567,7 +1569,64 @@
                 colors: ["Noir", "Marron", "Bordeaux", "Bleu marine"],
                 category: "luxe",
                 badge: "Luxe"
-            }
+            },
+crampons_football: {
+                id: "crampons_football",
+                title: "Crampons Football Pro",
+                price: 23000,
+                oldPrice: 32000,
+                image: "images/crap3.jpg",
+                description: "Crampons de football professionnels avec technologie d'accélération et crampons moulés pour une adhérence optimale sur terrain naturel et synthétique.",
+                features: [
+                    "Crampons moulés TPU",
+                    "Semelle légère",
+                    "Matériau synthétique respirant",
+                    "Confort et performance",
+                    "Idéal pour compétition"
+                ],
+                sizes: ["39", "40", "41", "42", "43", "44", "45"],
+                colors: ["Noir/Blanc", "Vert/Rouge", "Bleu/Orange", "Jaune/Noir"],
+                category: "football",
+                badge: "Pro"
+            },
+            crampons_fg: {
+                id: "crampons_fg",
+                title: "Crampons FG Terrain Ferme",
+                price: 23000,
+                oldPrice: 28000,
+                image: "images/crap1.jpg",
+                description: "Crampons spécialement conçus pour terrains fermes et synthétiques. Semelle FG avec crampons coniques pour une stabilité et une mobilité exceptionnelles.",
+                features: [
+                    "Semelle FG terrain ferme",
+                    "Crampons coniques",
+                    "Tige en cuir synthétique",
+                    "Léger et réactif",
+                    "Confort de port optimal"
+                ],
+                sizes: ["38", "39", "40", "41", "42", "43", "44"],
+                colors: ["Blanc/Noir", "Rouge/Noir", "Vert fluo", "Bleu électrique"],
+                category: "football",
+                badge: "Terrain Ferme"
+            },
+            crampons_sg: {
+                id: "crampons_sg",
+                title: "Crampons SG Terrain Mou",
+                price: 22000,
+                oldPrice: 35000,
+                image: "images/crap2.jpg",
+                description: "Crampons à crampons vissés pour terrains mous et humides. Design agressif avec crampons interchangeables pour une adhérence maximale.",
+                features: [
+                    "Crampons vissés interchangeables",
+                    "Semelle SG terrain mou",
+                    "Protection cheville",
+                    "Drainage eau intégré",
+                    "Performance extrême"
+                ],
+                sizes: ["40", "41", "42", "43", "44", "45"],
+                colors: ["Noir/Or", "Blanc/Bleu", "Noir/Rose", "Vert/Noir"],
+                category: "football",
+                badge: "Terrain Mou"
+            },
         };
 
         // ===== INITIALISATION =====
@@ -1773,7 +1832,7 @@
 
                         ${product.sizes ? `
                             <div class="size-selector">
-                                <h4>Pointure :</h4>
+                                <h4>${product.category === 'maillots' ? 'Taille :' : 'Pointure :'}</h4>
                                 <div class="size-options">
                                     ${product.sizes.map(size => `
                                         <label class="size-option">
@@ -1881,7 +1940,15 @@
                 'Noir/Rouge': 'linear-gradient(45deg, #000000 50%, #dc3545 50%)',
                 'Blanc/Bleu': 'linear-gradient(45deg, #ffffff 50%, #007bff 50%)',
                 'Gris/Orange': 'linear-gradient(45deg, #6c757d 50%, #fd7e14 50%)',
-                'Noir/Blanc': 'linear-gradient(45deg, #000000 50%, #ffffff 50%)'
+                'Noir/Blanc': 'linear-gradient(45deg, #000000 50%, #ffffff 50%)',
+                'Bleu royal': '#1e3a8a',
+                'Violet': '#7c3aed',
+                'Rose': '#ec4899',
+                'Vert fluo': '#22c55e',
+                'Bleu électrique': '#3b82f6',
+                'Jaune': '#eab308',
+                'Bleu/Grenat': 'linear-gradient(45deg, #1e3a8a 50%, #831843 50%)',
+                'Grenat/Bleu': 'linear-gradient(45deg, #831843 50%, #1e3a8a 50%)'
             };
             return colors[color] || '#cccccc';
         }
@@ -1905,8 +1972,8 @@
             const color = document.querySelector('input[name="color"]:checked');
             
             let details = '';
-            if (size) details += ` (Pointure: ${size.value})`;
-            if (color) details += ` (Couleur: ${color.value})`;
+            if (size) details += ` (${size.value})`;
+            if (color) details += ` (${color.value})`;
             
             let instructions = '';
             let methodName = '';
